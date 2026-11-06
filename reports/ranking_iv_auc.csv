@@ -1,0 +1,16 @@
+variable,IV,AUC_univ,fuerza_IV
+total_atrasos,1.3483,0.768,muy fuerte
+uso_credito_revolvente,1.1134,0.7778,muy fuerte
+atrasos_90,0.8274,0.6501,muy fuerte
+atrasos_30_59,0.7015,0.6819,muy fuerte
+atrasos_60_89,0.5529,0.6147,muy fuerte
+edad,0.2592,0.6353,medio
+uso_revolvente_gt1,0.2421,0.5542,medio
+ratio_deuda,0.0737,0.5238,débil
+ingreso_mensual,0.067,0.571,débil
+lineas_credito_abiertas,0.0669,0.5445,débil
+codigo_atraso_especial,0.0391,0.5069,débil
+dependientes,0.025,0.5476,débil
+prestamos_hipotecarios,0.0121,0.5373,inútil
+ingreso_faltante,0.0077,0.517,inútil
+ratio_deuda_dudoso,0.0077,0.517,inútil
