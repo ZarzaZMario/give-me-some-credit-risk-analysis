@@ -1,0 +1,19 @@
+# Datos: no subir CSVs (licencia Kaggle / tamaño)
+data/*.csv
+!data/README.md
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Local exports opcionales muy pesados (los HTML/PDF de notebooks sí se versionan si existen)
+*.parquet
