@@ -66,7 +66,6 @@ gmsc/
 │   ├── tabla_umbrales_hgb.csv
 │   └── permutation_importance_hgb.csv
 ├── sql/                   # BigQuery Standard SQL (para Looker; no corridas aquí)
-├── GUIA_ESTUDIO.md        # Guía paso a paso + preguntas de entrevista
 ├── requirements.txt
 └── README.md
 ```
@@ -94,7 +93,6 @@ Opcional: exportar HTML/PDF con `jupyter nbconvert --to html …` y Chrome headl
 
 Proyecto educativo / de portafolio. Las decisiones de umbral usan un **costo ilustrativo**. No es un scorecard regulatorio ni consejo financiero.
 
-Estudiar el flujo completo: ver [`GUIA_ESTUDIO.md`](GUIA_ESTUDIO.md).
 
 ---
 
