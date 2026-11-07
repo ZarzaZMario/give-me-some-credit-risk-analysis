@@ -7804,8 +7804,8 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="02-%E2%80%94-An%C3%A1lisis-exploratorio-(EDA)">02 — Análisis exploratorio (EDA)<a class="anchor-link" href="#02-%E2%80%94-An%C3%A1lisis-exploratorio-(EDA)">¶</a></h1><h2 id="Give-Me-Some-Credit-%E2%80%94-An%C3%A1lisis-de-riesgo-crediticio">Give Me Some Credit — Análisis de riesgo crediticio<a class="anchor-link" href="#Give-Me-Some-Credit-%E2%80%94-An%C3%A1lisis-de-riesgo-crediticio">¶</a></h2><p><strong>Autor:</strong> Mario Zarza Zárraga<br/>
 <strong>Entrada:</strong> <code>data/cs-training-limpio.csv</code> (salida de <code>01_limpieza</code>)<br/>
-<strong>Objetivo:</strong> entender qué variables se asocian más con la mora grave, probar la hipótesis de Mario y dejar hallazgos accionables para el modelo (<code>03_modelo</code>).</p>
-<p><strong>Hipótesis de Mario:</strong> <em>«Los atrasos pasados son lo que más pesa»</em>.</p>
+<strong>Objetivo:</strong> entender qué variables se asocian más con la mora grave, probar la hipótesis principal y dejar hallazgos accionables para el modelo (<code>03_modelo</code>).</p>
+<p><strong>Hipótesis:</strong> <em>«Los atrasos pasados son lo que más pesa»</em>.</p>
 </div>
 </div>
 </div>
@@ -8121,7 +8121,7 @@ Name: count, dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Hip%C3%B3tesis-de-Mario:-%C2%BFpesan-m%C3%A1s-los-atrasos-pasados?">2. Hipótesis de Mario: ¿pesan más los atrasos pasados?<a class="anchor-link" href="#2.-Hip%C3%B3tesis-de-Mario:-%C2%BFpesan-m%C3%A1s-los-atrasos-pasados?">¶</a></h2><p>Creamos <code>total_atrasos</code> = suma de las tres columnas de atraso (ya limpias) y vemos la <strong>tasa de mora</strong> por:</p>
+<h2 id="2.-Hip%C3%B3tesis:-%C2%BFpesan-m%C3%A1s-los-atrasos-pasados?">2. Hipótesis: ¿pesan más los atrasos pasados?<a class="anchor-link" href="#2.-Hip%C3%B3tesis:-%C2%BFpesan-m%C3%A1s-los-atrasos-pasados?">¶</a></h2><p>Creamos <code>total_atrasos</code> = suma de las tres columnas de atraso (ya limpias) y vemos la <strong>tasa de mora</strong> por:</p>
 <ul>
 <li>cada columna de atraso (agrupada en 0, 1, 2, 3+)</li>
 <li>el total combinado</li>
@@ -9113,7 +9113,7 @@ uso_credito_revolvente 1.1134    0.7778 muy fuerte
 <span class="n">n_atraso_top3</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">top3</span> <span class="o">&amp;</span> <span class="n">atraso_vars</span><span class="p">)</span>
 <span class="n">hipotesis_ok</span> <span class="o">=</span> <span class="p">(</span><span class="n">top_iv</span> <span class="ow">in</span> <span class="n">atraso_vars</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">n_atraso_top3</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"=== Veredicto hipótesis de Mario ==="</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"=== Veredicto hipótesis ==="</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Variable #1 por IV: </span><span class="si">{</span><span class="n">top_iv</span><span class="si">}</span><span class="s2"> (IV=</span><span class="si">{</span><span class="n">ranking</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'IV'</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Atraso-related en top 3: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">top3</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">atraso_vars</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"¿Hipótesis se sostiene? </span><span class="si">{</span><span class="s1">'SÍ'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">hipotesis_ok</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'NO / PARCIAL'</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -9133,7 +9133,7 @@ uso_credito_revolvente 1.1134    0.7778 muy fuerte
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>=== Veredicto hipótesis de Mario ===
+<pre>=== Veredicto hipótesis ===
 Variable #1 por IV: total_atrasos (IV=1.3483)
 Atraso-related en top 3: ['atrasos_90', 'total_atrasos']
 ¿Hipótesis se sostiene? SÍ
@@ -9296,7 +9296,7 @@ mora_grave          1.000
 <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"### Hallazgos clave"</span><span class="p">)</span>
 <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-<span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"1. **La hipótesis de Mario se sostiene:** el historial de atrasos domina el ranking."</span><span class="p">)</span>
+<span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"1. **La hipótesis se sostiene:** el historial de atrasos domina el ranking."</span><span class="p">)</span>
 <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - `total_atrasos` IV=</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'total_atrasos'</span><span class="p">,</span><span class="w"> </span><span class="s1">'IV'</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> (AUC=</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'total_atrasos'</span><span class="p">,</span><span class="w"> </span><span class="s1">'AUC_univ'</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)."</span><span class="p">)</span>
 <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - `atrasos_90` IV=</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'atrasos_90'</span><span class="p">,</span><span class="w"> </span><span class="s1">'IV'</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">; `atrasos_30_59` IV=</span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">'atrasos_30_59'</span><span class="p">,</span><span class="w"> </span><span class="s1">'IV'</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   - Sin ningún atraso la mora es ~</span><span class="si">{</span><span class="n">t0</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">; con 3+ llega a ~</span><span class="si">{</span><span class="n">t3</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> (vs global </span><span class="si">{</span><span class="n">tasa_global</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">)."</span><span class="p">)</span>
@@ -9332,7 +9332,7 @@ mora_grave          1.000
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>### Hallazgos clave
 
-1. **La hipótesis de Mario se sostiene:** el historial de atrasos domina el ranking.
+1. **La hipótesis se sostiene:** el historial de atrasos domina el ranking.
    - `total_atrasos` IV=1.348 (AUC=0.768).
    - `atrasos_90` IV=0.827; `atrasos_30_59` IV=0.702.
    - Sin ningún atraso la mora es ~2.8%; con 3+ llega a ~44.6% (vs global 6.7%).
