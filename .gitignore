@@ -17,3 +17,6 @@ venv/
 
 # Local exports opcionales muy pesados (los HTML/PDF de notebooks sí se versionan si existen)
 *.parquet
+
+# Guía personal de estudio
+GUIA_ESTUDIO.*
